@@ -6,13 +6,17 @@ from rest_framework.permissions import IsAuthenticated, AllowAny
 from .models import Note
 
 
+
+#only allows if the user is authenticated
 class NoteListCreate(generics.ListCreateAPIView):
     serializer_class = NoteSerializer
     permission_classes = [IsAuthenticated]
 
+
     def get_queryset(self):
         user = self.request.user
         return Note.objects.filter(author=user)
+    
 
     def perform_create(self, serializer):
         if serializer.is_valid():
@@ -21,16 +25,22 @@ class NoteListCreate(generics.ListCreateAPIView):
             print(serializer.errors)
 
 
+
+        #method to override methods within existing django method
 class NoteDelete(generics.DestroyAPIView):
-    serializer_class = NoteSerializer
+    seruializer_class = NoteSerializer
     permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
         user = self.request.user
         return Note.objects.filter(author=user)
-
-
+        
+# Create your views here.
 class CreateUserView(generics.CreateAPIView):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
-    permission_classes = [AllowAny]
+    query = User.objects.all()
+    serializer_class = UserSerializer 
+    permission_classes = [AllowAny]#change in future?
+
+
+
+
