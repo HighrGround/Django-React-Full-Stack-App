@@ -9,6 +9,14 @@ class Note(models.Model):
 
 #this is for adding notes models.cascade will remove all notes and note values relating to the user
 
+class Vans(models.Model):
+    title = models.CharField(max_length= 100)
+    description = models.TextField()
+    year = models.DateTimeField()
+    price = models.CharField(max_length=20)
+    
+    milage = models.ForeignKey(User, on_delete=models.CASCADE, related_name="notes")
+
 
 
 
