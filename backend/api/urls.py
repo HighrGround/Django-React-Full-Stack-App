@@ -14,6 +14,8 @@ def get_data(request):
 
 urlpatterns = [
     path("notes/", views.NoteListCreate.as_view(), name= "note-list"),
+    path("vanslist/", views.VansListCreate.as_view(), name= "vans"),
+
     path("notes/delete/<int:pk>/", views.NoteDelete.as_view(), name="delete-note"),
     path("notes/delete/<int:pk>/", views.NoteDelete.as_view(), name="delete-note"),
 

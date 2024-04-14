@@ -98,7 +98,7 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',  # Update engine to 'postgresql'
-        'NAME': 'vanslist',  
+        'NAME': 'vans',  
         'USER': 'postgres',  
         'PASSWORD': 'T@RgegDoY:s0',  
         'HOST': 'localhost',  # Keep localhost if the database runs locally 
