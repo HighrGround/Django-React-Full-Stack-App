@@ -19,12 +19,6 @@ from django.urls import path, include
 from api.views import CreateUserView
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from django.shortcuts import render
-from .models import MyDataModel
-
-def get_data(request):
-    data = MyDataModel.objects.all()  # Fetch all objects
-    # You can also filter or order data based on request parameters
-    return render(request, 'data.json', {'data': data})  # Optional for template rendering (explained later)
 
 
 urlpatterns = [

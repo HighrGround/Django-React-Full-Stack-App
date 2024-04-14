@@ -3,15 +3,10 @@ from django.contrib.auth.models import User
 from rest_framework import generics
 from .serializers import UserSerializer, NoteSerializer
 from rest_framework.permissions import IsAuthenticated, AllowAny
-from .models import Note
+from .models import Note, vanslist
 
 
 
-from .models import MyDataModel
-
-def get_data(request):
-    data = MyDataModel.objects.all()  # Fetch all objects
-    return render(request, 'data.json', {'data': data})  # Optional for template rendering (explained later)
 
 #only allows if the user is authenticated
 class NoteListCreate(generics.ListCreateAPIView):

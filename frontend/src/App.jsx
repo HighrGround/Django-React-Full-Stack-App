@@ -23,12 +23,13 @@ function App() {
         <Route
           path="/"
           element={
-            <ProtectedRoute>
+            // Temporarily commenting out the ProtectedRoute component
+            /*<ProtectedRoute>*/
               <Home />
-            </ProtectedRoute>
+            /*</ProtectedRoute>*/
           }
         />
-        <Route path="/login" element={<Login />} />
+        <Route path="/Home" element={<Home />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/register" element={<RegisterAndLogout />} />
         <Route path="*" element={<NotFound />}></Route>
@@ -36,5 +37,6 @@ function App() {
     </BrowserRouter>
   )
 }
+
 
 export default App

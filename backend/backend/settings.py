@@ -95,16 +95,14 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'vanslist',
-        'USER': 'admin',
-        'PASSWORD': 'T@RgegDoY:s0',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.postgresql',  # Update engine to 'postgresql'
+        'NAME': 'vanslist',  
+        'USER': 'postgres',  
+        'PASSWORD': 'T@RgegDoY:s0',  
+        'HOST': 'localhost',  # Keep localhost if the database runs locally 
+        'PORT': '5432',  # Update port to 5432 (default for PostgreSQL)
     }
 }
 

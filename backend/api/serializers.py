@@ -1,11 +1,11 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
-from .models import Note, vansdata
+from .models import Note, vanslist
 
 
-class MyDataModelSerializer(serializers.ModelSerializer):
+class vanslistSerializer(serializers.ModelSerializer):
     class Meta:
-        model = vansdata
+        model = vanslist
         fields = '__all__'  # Include all fields
 
 class UserSerializer(serializers.ModelSerializer):

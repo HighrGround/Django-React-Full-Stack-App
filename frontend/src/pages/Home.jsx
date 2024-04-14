@@ -7,7 +7,7 @@ function Home() {
     const [notes, setNotes] = useState([]);
     const [content, setContent] = useState("");
     const [title, setTitle] = useState("");
-
+/*
     useEffect(() => {
         getNotes();
     }, []);
@@ -45,41 +45,49 @@ function Home() {
             })
             .catch((err) => alert(err));
     };
-
+*/
     return (
-        <div>
+
             <div>
-                <h2>Notes</h2>
-                {notes.map((note) => (
-                    <Note note={note} onDelete={deleteNote} key={note.id} />
-                ))}
+              <nav>
+                <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="index.html">Inventory</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+                </ul>
+              </nav>
+              <div id="inventory">
+                <h2 className="invtitle">Our Inventory</h2>
+                <ul id="car_list">
+                  <li className="listing-container">
+                    <a href="listings/listing - Copy (2).html">
+                      <div className="inv">
+                        <img className="invimg" src="images/2/s-l1600 (1).jpg" alt="Ford Transit 2021" />
+                      </div>
+                      <div className="listing-info">
+                        <h1>Ford transit 2015</h1>
+                        <p className="description">Wood lined, spare key, new MOT on purchase, just off service from Lex Leasing, Euro 6 go any place. Pictures to follow. Licenced Credit Broker finance arranged.</p>
+                        <h2>13,194.00</h2>
+                        <div className="buttons">
+                          <button>View Details</button>
+                          <button>Contact Us</button>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  {/* Repeat the above structure for other listings */}
+                </ul>
+              </div>
+              <footer>
+                <div id="footer">
+                  <p>Locatated at : Kirk st Dundee DD2 3EN</p>
+                  <p>&copy; Gowanbank Garage 2024</p>
+                </div>
+              </footer>
             </div>
-            <h2>Create a Note</h2>
-            <form onSubmit={createNote}>
-                <label htmlFor="title">Title:</label>
-                <br />
-                <input
-                    type="text"
-                    id="title"
-                    name="title"
-                    required
-                    onChange={(e) => setTitle(e.target.value)}
-                    value={title}
-                />
-                <label htmlFor="content">Content:</label>
-                <br />
-                <textarea
-                    id="content"
-                    name="content"
-                    required
-                    value={content}
-                    onChange={(e) => setContent(e.target.value)}
-                ></textarea>
-                <br />
-                <input type="submit" value="Submit"></input>
-            </form>
-        </div>
-    );
+          );
+          
+    
 }
 
 export default Home;
